@@ -4,7 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <welcome-file-list>
-    <welcome-file>signin.html</welcome-file>
-  </welcome-file-list>
+
+    <servlet>
+      <servlet-name>ticketservlet</servlet-name>
+      <servlet-class>com.ticket.ticketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>ticketservlet</servlet-name>
+      <url-pattern>/ticketservlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>

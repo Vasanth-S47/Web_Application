@@ -4,6 +4,10 @@ document.getElementById("confirmPassword").addEventListener("blur", validateConf
 document.getElementById("paragraph").addEventListener("copy",function(){
 alert("Copy is not allowed");
 });
+(function() {
+    let message = "Hello, Zoho!";
+    console.log(message);
+})();
 function validateEmail() {
     let email = document.getElementById("email").value;
     let emailError = document.getElementById("emailError");

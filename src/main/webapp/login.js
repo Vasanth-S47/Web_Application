@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let captchaCode = "";
 
-
   function generateCaptcha() {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     captchaCode = "";
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     captchaText.textContent = captchaCode;
   }
-
 
   generateCaptcha();
 
@@ -31,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
       emailError.textContent = "";
     }
   });
-
-  // Password Validation
   passwordInput.addEventListener("blur", function () {
     if (passwordInput.value.length < 6) {
       passwordError.textContent = "Password must be at least 6 characters!";
@@ -41,10 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Form Submission Handling
-  document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
 
+  document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
     if (captchaInput.value !== captchaCode) {
       captchaError.textContent = "CAPTCHA does not match!";
       return;
@@ -54,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!emailError.textContent && !passwordError.textContent) {
       alert("Login successful!");
-      window.location.href = "dashboard.html"; // Redirect after successful login
+      window.location.href = "ticket.html";
     } else {
       alert("Please fix errors before submitting.");
     }
